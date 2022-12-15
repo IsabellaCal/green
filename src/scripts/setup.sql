@@ -19,7 +19,7 @@ create table menu(
 	"name" varchar(25),
 	price decimal,
 	category_id integer,
-	foreign key (category_id) references category (category_id) on delete cascade
+	foreign key (category_id) references category (category_id)
 );
 
 insert into menu (name, price, category_id) values ('pizza margherita', 6.50, 2);
