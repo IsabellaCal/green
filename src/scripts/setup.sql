@@ -8,11 +8,11 @@ create table category(
 	"name" varchar(20)
 );
 
-insert into category (name) values ('Antipasto e fritto');
-insert into category (name) values ('Pizza');
-insert into category (name) values ('Pinsa');
-insert into category (name) values ('Dolce');
-insert into category (name) values ('Bevanda');
+insert into category (name) values ('Antipasti e fritti');
+insert into category (name) values ('Pizze');
+insert into category (name) values ('Pinse');
+insert into category (name) values ('Dolci');
+insert into category (name) values ('Bevande');
 
 create table menu(
 	menu_id serial primary key,
