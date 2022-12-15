@@ -1,7 +1,8 @@
 drop table if exists order_detail;
-DROP TABLE IF EXISTS MENU;
+DROP TABLE IF EXISTS MENU cascade;
 drop table if exists category;
-drop table if exists "order";
+drop table if exists "order" cascade;
+
 
 create table category(
 	category_id serial primary key,
