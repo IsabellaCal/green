@@ -34,7 +34,8 @@ create table detail(
 	order_id integer,
 	menu_id integer,
 	quantity decimal,
-	foreign key (order_id) references "order" (order_id) delete on cascade,
-	foreign key (menu_id) references menu (menu_id) delete on cascade
+	foreign key (order_id) references "order" (order_id),
+	foreign key (menu_id) references menu (menu_id)
 );
+
 
