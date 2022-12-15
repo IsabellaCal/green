@@ -1,4 +1,4 @@
-drop table if exists detail;
+drop table if exists order_detail;
 DROP TABLE IF EXISTS MENU;
 drop table if exists category;
 drop table if exists "order";
@@ -17,7 +17,7 @@ insert into category (name) values ('Bevanda');
 create table menu(
 	menu_id serial primary key,
 	"name" varchar(25),
-	price decimal,
+	price decimal(4,2),
 	category_id integer,
 	foreign key (category_id) references category (category_id)
 );
@@ -26,14 +26,14 @@ insert into menu (name, price, category_id) values ('pizza margherita', 6.50, 2)
 
 create table "order"(
 	order_id serial primary key,
-	total decimal
+	total decimal(5,2)
 );
 
-create table detail(
+create table order_detail(
 	detail_id serial primary key,
 	order_id integer,
 	menu_id integer,
-	quantity decimal,
+	quantity integer,
 	foreign key (order_id) references "order" (order_id),
 	foreign key (menu_id) references menu (menu_id)
 );

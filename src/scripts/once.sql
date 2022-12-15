@@ -2,8 +2,8 @@
 --
 -- psql -U postgres \i setup.sql
 
-drop schema if exists stem cascade;
-drop user if exists stem;
+drop schema if exists green cascade;
+drop user if exists green;
 
-create user stem with password 'password';
-create schema authorization stem;
+create user green with password 'password';
+create schema authorization green;
