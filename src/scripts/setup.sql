@@ -30,7 +30,13 @@ create table menu(
 	foreign key (category_id) references category (category_id)
 );
 
-insert into menu (name, price, category_id) values ('pizza margherita', 6.50, 2);
+insert into menu (name, price, imgpath, descriprion, category_id) values 
+	('margherita', 6, 'margherita.jpg', 'Pomodoro San Marzano DOP, fior di Latte, basilico.', 2),
+	('nduja e bufala', 10.50, 'margherita.jpg', 'Nduja, fior di latte, mozzarella di bufala in uscita, basilico.', 2),
+	('carpaccio di mare', 13, 'margherita.jpg', 'Pomodoro, rucola, carpaccio di Tonno, carpaccio di Salmone, carpaccio di Spada.', 2),
+	('diavola', 9, 'diavola.jpg', 'Fior di latte, salame piccante', 3),
+	('vegetariana', 9.50, 'pinsaVerdure.jpg', 'Fior di latte, pomodorini, peperoni, funghi', 3),
+	('tiramisù', 6, 'diavola.jpg', 'Savoiardi, crema al mascarpone, spolverizzato con cacao amaro e cannella in polvere', 4);
 
 
 create table "order"(
