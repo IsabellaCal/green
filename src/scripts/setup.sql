@@ -25,12 +25,12 @@ create table menu(
 	"name" varchar(25),
 	price decimal(4,2),
 	imgpath varchar(20),
-	descriprion varchar(100),
+	description varchar(100),
 	category_id integer,
 	foreign key (category_id) references category (category_id)
 );
 
-insert into menu (name, price, imgpath, descriprion, category_id) values 
+insert into menu (name, price, imgpath, description, category_id) values 
 	('margherita', 6, 'margherita.jpg', 'Pomodoro San Marzano DOP, fior di Latte, basilico.', 2),
 	('nduja e bufala', 10.50, 'margherita.jpg', 'Nduja, fior di latte, mozzarella di bufala in uscita, basilico.', 2),
 	('carpaccio di mare', 13, 'margherita.jpg', 'Pomodoro, rucola, carpaccio di Tonno, carpaccio di Salmone, carpaccio di Spada.', 2),
