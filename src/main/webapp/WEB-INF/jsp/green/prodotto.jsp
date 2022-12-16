@@ -18,6 +18,11 @@
 </script>
 </head>
 <body>
+
+	<!-- NAVBAR -->
+	<%@include file="/green/include/navtop.html"%>
+	
+	<!-- CARDS -->
 	<c:forEach var="product" items="${products}">
 		<div class="card mb-3">
 			<img src="/green/pic/menu/${product.imgpath}" class="card-img-top"
@@ -28,5 +33,8 @@
 			</div>
 		</div>
 	</c:forEach>
+	
+	<!-- FOOTER -->
+	<%@include file="/green/include/navbottom.html"%>
 </body>
 </html>

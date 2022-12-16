@@ -4,3 +4,21 @@ a{
 	color: black !important;
 	text-decoration: none !important;
 }
+
+.card {
+	width: 600px; 
+	height: auto;
+	margin: 0 auto; /* Added */
+    float: none; /* Added */
+    margin-bottom: 10px; /* Added */
+}
+
+.page-header {
+	width: 800px; 
+	height: 300px;
+	margin: 0 auto; /* Added */
+    float: none; /* Added */
+    margin-bottom: 10px; /* Added */
+    overflow: hidden;
+}
+
