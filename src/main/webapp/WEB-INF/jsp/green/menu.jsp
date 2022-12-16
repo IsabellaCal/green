@@ -29,7 +29,12 @@
 
 		<!-- NAVBAR -->
 		<%@include file="/green/include/navtop.html"%>
-            
+        
+        <!-- PAGE HEADER -->
+		<div class="container">
+			<img class="header" src="/green/pic/category/header.png">
+			<div class="centered">Pizza &amp; Pinsa</div>
+		</div>
 
 		<!-- CARDS -->
 		<c:forEach var="category" items="${categories}">
