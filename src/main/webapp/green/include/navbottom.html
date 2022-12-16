@@ -1,63 +1,42 @@
-<nav class="navbar sticky-bottom navbar-expand-lg bg-light">
-	<div class="container-fluid">
-		<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-			data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
-			aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-		<div class="collapse navbar-collapse" id="navbarNavDropdown">
-			<ul class="navbar-nav">
-				<li class="nav-item"><a class="nav-link active"
-					aria-current="page" href="#">Menu</a></li>
-				<li class="nav-item dropup-center dropup">
-					<div class="dropup-center dropup">
-						<a class="nav-link dropdown-toggle" href="#" role="button"
-							data-bs-toggle="dropdown" aria-expanded="false">Categorie</a>
-						<ul class="dropdown-menu">
-							<li><a class="dropdown-item" href="#">Antipasti e fritti</a></li>
-							<li><a class="dropdown-item" href="#">Le nostre pizze</a></li>
-							<li><a class="dropdown-item" href="#">Le nostre pinse</a></li>
-							<li><a class="dropdown-item" href="#">Dolci</a></li>
-							<li><a class="dropdown-item" href="#">Bevande</a></li>
-						</ul>
-					</div>
-				</li>
-				<li class="nav-item dropup-center dropup">
-					<div class="dropup-center dropup">
-						<a class="nav-link dropdown-toggle" href="#" role="button"
-							data-bs-toggle="dropdown" aria-expanded="false">Cerca</a>
-						<ul class="dropdown-menu">
-							<li><a class="dropdown-item" href="#">Action</a></li>
-							<li><a class="dropdown-item" href="#">Action two</a></li>
-							<li><a class="dropdown-item" href="#">Action three</a></li>
-						</ul>
-					</div>
-				</li>
-				<li class="nav-item dropup-center dropup">
-					<div class="dropup-center dropup">
-						<a class="nav-link dropdown-toggle" href="#" role="button"
-							data-bs-toggle="dropdown" aria-expanded="false">Contatti</a>
-						<ul class="dropdown-menu">
-							<li><a class="dropdown-item" href="#">+39 06 12.34.56.78</a></li>
-							<li><a class="dropdown-item" href="#">Messaggio WhatsApp</a></li>
-							<li><a class="dropdown-item" href="#">info@leggimenu.it</a></li>
-							<li><a class="dropdown-item" href="#">Visualizza su
-									Google Maps</a></li>
-						</ul>
-					</div>
-				</li>
-				<li class="nav-item dropup-center dropup">
-					<div class="dropup-center dropup">
-						<a class="nav-link dropdown-toggle" href="#" role="button"
-							data-bs-toggle="dropdown" aria-expanded="false">Condividi</a>
-						<ul class="dropdown-menu">
-							<li><a class="dropdown-item" href="#">Facebook</a></li>
-							<li><a class="dropdown-item" href="#">WhatsApp</a></li>
-							<li><a class="dropdown-item" href="#">Email</a></li>
-						</ul>
-					</div>
-				</li>
+<div class="d-flex justify-content-around fixed-bottom" style="background-color: #F0F0F0">
+		<div class="p-2">
+			<a class="nav-link active" aria-current="page" href="/green/home">Menu</a>
+		</div>
+		<div class="p-2 dropup-center dropup">
+			<a class="nav-link dropdown-toggle" href="#" role="button"
+				data-bs-toggle="dropdown" aria-expanded="false">Categorie</a>
+			<ul class="dropdown-menu">
+				<li><a class="dropdown-item" href="/green/home/product?id=1">Antipasti e fritti</a></li>
+				<li><a class="dropdown-item" href="/green/home/product?id=2">Le nostre pizze</a></li>
+				<li><a class="dropdown-item" href="/green/home/product?id=3">Le nostre pinse</a></li>
+				<li><a class="dropdown-item" href="/green/home/product?id=4">Dolci</a></li>
+				<li><a class="dropdown-item" href="/green/home/product?id=5">Bevande</a></li>
 			</ul>
 		</div>
-	</div>
-</nav>
+		<div class="p-2 dropup-center dropup">
+			<a class="nav-link dropdown-toggle" href="#" role="button"
+				data-bs-toggle="dropdown" aria-expanded="false">Cerca</a>
+			<ul class="dropdown-menu">
+				<li><a class="dropdown-item" href="#">Cerca</a></li>
+			</ul>
+		</div>
+		<div class="p-2 dropup-center dropup">
+			<a class="nav-link dropdown-toggle" href="#" role="button"
+				data-bs-toggle="dropdown" aria-expanded="false">Contatti</a>
+			<ul class="dropdown-menu">
+				<li><a class="dropdown-item" href="#">+39 06 12.34.56.78</a></li>
+				<li><a class="dropdown-item" href="#">Messaggio WhatsApp</a></li>
+				<li><a class="dropdown-item" href="#">info@leggimenu.it</a></li>						
+				<li><a class="dropdown-item" href="#">Visualizza su Google Maps</a></li>
+			</ul>
+		</div>
+		<div class="p-2 dropup-center dropup">
+			<a class="nav-link dropdown-toggle" href="#" role="button"
+				data-bs-toggle="dropdown" aria-expanded="false">Condividi</a>
+			<ul class="dropdown-menu">
+				<li><a class="dropdown-item" href="#">Facebook</a></li>
+							<li><a class="dropdown-item" href="#">WhatsApp</a></li>
+							<li><a class="dropdown-item" href="#">Email</a></li>
+			</ul>
+		</div>
+</div>
