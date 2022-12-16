@@ -10,16 +10,16 @@ import com.example.demo.green.repo.OrderRepo;
 
 @Service
 public class OrderSvc {
-	private List<Order> orders;
+	private List<Order> orders = new ArrayList<>();
 	private OrderRepo repo;
 	
 	public OrderSvc(OrderRepo repo) {
-		this.orders = new ArrayList<>();
 		this.repo = repo;
 	}
 	
 	public Integer currentOrder() {
-		return repo.findCurrentOrder().iterator().next().getId();
+		orders = (List<Order>) repo.findCurrentOrder();
+		return orders.get(0).getId();
 		// Dovremmo controllare che ci sia next: .hasNext()
 	}
 }

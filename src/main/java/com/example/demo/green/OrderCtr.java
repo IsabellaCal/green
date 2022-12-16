@@ -1,5 +1,7 @@
 package com.example.demo.green;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,7 +22,7 @@ public class OrderCtr {
 	}
 	
 	@GetMapping()
-	public String getOrder(Model model) {
+	public String getOrder(Model model, HttpSession session) {
 		Integer id = svc.currentOrder();
 		model.addAttribute("detailOrder", repo.findDetailsById(id));
 		return "/green/ordine";
