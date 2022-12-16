@@ -24,19 +24,23 @@ create table menu(
 	menu_id serial primary key,
 	"name" varchar(25),
 	price decimal(4,2),
-	imgpath varchar(20),
+	imgpath varchar(25),
 	description varchar(100),
 	category_id integer,
 	foreign key (category_id) references category (category_id)
 );
 
 insert into menu (name, price, imgpath, description, category_id) values 
+	('anelli cipolla fritti', 5, 'anelliCipollaFritti.jpg', 'Anelli cipolla fritti.', 1),
 	('margherita', 6, 'margherita.jpg', 'Pomodoro San Marzano DOP, fior di Latte, basilico.', 2),
 	('nduja e bufala', 10.50, 'margherita.jpg', 'Nduja, fior di latte, mozzarella di bufala in uscita, basilico.', 2),
 	('carpaccio di mare', 13, 'margherita.jpg', 'Pomodoro, rucola, carpaccio di Tonno, carpaccio di Salmone, carpaccio di Spada.', 2),
-	('diavola', 9, 'diavola.jpg', 'Fior di latte, salame piccante', 3),
-	('vegetariana', 9.50, 'pinsaVerdure.jpg', 'Fior di latte, pomodorini, peperoni, funghi', 3),
-	('tiramisù', 6, 'tiramisu.jpg', 'Savoiardi, crema al mascarpone, spolverizzato con cacao amaro e cannella in polvere', 4);
+	('diavola', 9, 'diavola.jpg', 'Fior di latte, salame piccante.', 3),
+	('vegetariana', 9.50, 'pinsaVerdure.jpg', 'Fior di latte, pomodorini, peperoni, funghi.', 3),
+	('tiramisù', 6, 'tiramisu.jpg', 'Savoiardi, crema al mascarpone, spolverizzato con cacao amaro e cannella in polvere.', 4),
+	('torta di fragole', 6, 'tortaFragole.jpg', 'Base di biscotti, crema pasticcera, fragole.', 4),
+	('birra bionda alla spina', 3.50, 'birraBionda.jpg', 'Pils, biondo dorato, gusto ricco e distintivo (0.20 cl).', 5),
+	('birra rossa alla spina', 3.50, 'birraRossa.jpg', 'Weizern, gusto rinfrescante e fruttato (0.20 cl).', 5);
 
 
 create table "order"(
