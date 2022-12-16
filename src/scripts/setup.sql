@@ -36,7 +36,7 @@ insert into menu (name, price, imgpath, description, category_id) values
 	('carpaccio di mare', 13, 'margherita.jpg', 'Pomodoro, rucola, carpaccio di Tonno, carpaccio di Salmone, carpaccio di Spada.', 2),
 	('diavola', 9, 'diavola.jpg', 'Fior di latte, salame piccante', 3),
 	('vegetariana', 9.50, 'pinsaVerdure.jpg', 'Fior di latte, pomodorini, peperoni, funghi', 3),
-	('tiramisù', 6, 'diavola.jpg', 'Savoiardi, crema al mascarpone, spolverizzato con cacao amaro e cannella in polvere', 4);
+	('tiramisù', 6, 'tiramisu.jpg', 'Savoiardi, crema al mascarpone, spolverizzato con cacao amaro e cannella in polvere', 4);
 
 
 create table "order"(
