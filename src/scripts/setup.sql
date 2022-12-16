@@ -48,6 +48,8 @@ create table "order"(
 	total decimal(5,2)
 );
 
+insert into "order" (total) values (10);
+
 create table order_detail(
 	detail_id serial primary key,
 	order_id integer,
@@ -57,4 +59,6 @@ create table order_detail(
 	foreign key (menu_id) references menu (menu_id)
 );
 
+insert into order_detail (order_id, menu_id, quantity) values (1, 1, 1);
 
+insert into order_detail (order_id, menu_id, quantity) values (1, 2, 1);
