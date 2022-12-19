@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -17,15 +19,18 @@ public class OrderDetail {
 	@Column(name = "DETAIL_ID")
 	private Integer id;
 	private Integer orderId;
-	private Integer menuId;
+	
+	@ManyToOne
+	@JoinColumn(name = "MENU_ID")
+	private Product product;
 	private Integer quantity;
 	
 	public OrderDetail() {
 		
 	}
 	
-	public OrderDetail(Integer menuId, Integer quantity) {
-		this.menuId = menuId;
+	public OrderDetail(Product product, Integer quantity) {
+		this.product = product;
 		this.quantity = quantity;
 	}
 
@@ -45,12 +50,12 @@ public class OrderDetail {
 		this.orderId = orderId;
 	}
 
-	public Integer getMenuId() {
-		return menuId;
+	public Product getProduct() {
+		return product;
 	}
 
-	public void setMenuId(Integer menuId) {
-		this.menuId = menuId;
+	public void setProduct(Product product) {
+		this.product = product;
 	}
 
 	public Integer getQuantity() {
@@ -63,7 +68,7 @@ public class OrderDetail {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(id, menuId, orderId, quantity);
+		return Objects.hash(id, orderId, product, quantity);
 	}
 
 	@Override
@@ -75,14 +80,13 @@ public class OrderDetail {
 		if (getClass() != obj.getClass())
 			return false;
 		OrderDetail other = (OrderDetail) obj;
-		return Objects.equals(id, other.id) && Objects.equals(menuId, other.menuId)
-				&& Objects.equals(orderId, other.orderId) && Objects.equals(quantity, other.quantity);
+		return Objects.equals(id, other.id) && Objects.equals(orderId, other.orderId)
+				&& Objects.equals(product, other.product) && Objects.equals(quantity, other.quantity);
 	}
 
 	@Override
 	public String toString() {
-		return "OrderDetail [id=" + id + ", orderId=" + orderId + ", menuId=" + menuId + ", quantity=" + quantity + "]";
-	}
-	
-	
+		return "OrderDetail [id=" + id + ", orderId=" + orderId + ", product=" + product + ", quantity=" + quantity
+				+ "]";
+	}	
 }

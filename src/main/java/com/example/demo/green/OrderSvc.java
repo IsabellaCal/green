@@ -1,25 +1,17 @@
 package com.example.demo.green;
 
-import java.util.ArrayList;
 import java.util.List;
-
 import org.springframework.stereotype.Service;
-
-import com.example.demo.green.dao.Order;
-import com.example.demo.green.repo.OrderRepo;
+import com.example.demo.green.dao.OrderDetail;
 
 @Service
 public class OrderSvc {
-	private List<Order> orders = new ArrayList<>();
-	private OrderRepo repo;
-	
-	public OrderSvc(OrderRepo repo) {
-		this.repo = repo;
-	}
-	
-	public Integer currentOrder() {
-		orders = (List<Order>) repo.findCurrentOrder();
-		return orders.get(0).getId();
-		// Dovremmo controllare che ci sia next: .hasNext()
+
+	public Double getTotal(List<OrderDetail> details) {
+		Double total = 0.0;
+		for (int i = 0; i < details.size(); i++) {
+			total += details.get(i).getQuantity() * details.get(i).getProduct().getPrice();
+		}
+		return total;
 	}
 }
