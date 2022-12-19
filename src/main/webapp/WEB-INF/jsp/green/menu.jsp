@@ -37,7 +37,7 @@
         <!-- PAGE HEADER -->
 		<div class="container">
 			<img class="header" src="/green/pic/category/header.png">
-			<div class="centered">Pizza &amp; Pinsa</div>
+			<h1 class="centered">Pizza &amp; Pinsa</h1>
 		</div>
 
 		<!-- CARDS -->
@@ -53,6 +53,10 @@
 				</div>
 			</a>
 		</c:forEach>
+		
+		<!-- SPAZI VUOTI PER NON FARE TOCCARE L'ULTIMA CARD CON IL FOOTER -->
+		<br>
+		<br>
 
 		<!-- FOOTER -->
 		<%@include file="/green/include/navbottom.html"%>

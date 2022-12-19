@@ -8,19 +8,21 @@ body  {
 
 h1, h2, h3, h4, h5, h6  {
 	font-family: "staatliches", sans-serif !important;
+	color: black !important;
 }
 
 a{
-	color: black !important;
+	color: grey !important;
 	text-decoration: none !important;
 }
 
 .card {
 	width: 600px; 
 	height: auto;
-	margin: 0 auto; /* Added */
-    float: none; /* Added */
-    margin-bottom: 10px; /* Added */
+	margin: 0 auto; 
+    float: none; 
+    margin-bottom: 10px;
+    text-align: center;
 }
 
 .container {
@@ -31,18 +33,23 @@ a{
 }
 
 .header {
-		margin-bottom: 20px;
-		opacity: 0.7;
+	margin-bottom: 20px;
+	opacity: 0.7;
 }
 
 .centered {
-  position: absolute;
-  left: 50%;
- bottom: 8px;
-  transform: translate(-50%, -50%);
-  color: black;
-  font-size: 40px;
+	position: absolute;
+	left: 50%;
+	bottom: 8px;
+	transform: translate(-50%, -50%);
+	color: black;
+	font-size: 40px;
 }
+
+.nav-link {
+	color: black !important;
+}
+
 
 
 
