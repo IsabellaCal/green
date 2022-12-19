@@ -1,14 +1,14 @@
 <nav class="navbar sticky-top bg-light fixed-top">
 	<div class="container-fluid">
 		<c:choose>
-		    <c:when test="${not empty categories}">
-		        <a class="navbar-brand" href="/index.html">
-		        <img src="/green/pic/indietro.png" width="40" height="40"></a>
-		    </c:when>    
-		    <c:otherwise>
-		        <a class="navbar-brand" href="/green/home">
-		        <img src="/green/pic/indietro.png" width="40" height="40"></a>
-		    </c:otherwise>
+			<c:when test="${not empty categories}">
+				<a class="navbar-brand" href="/index.html"> <img
+					src="/green/pic/indietro.png" width="40" height="40"></a>
+			</c:when>
+			<c:otherwise>
+				<a class="navbar-brand" href="/green/home"> <img
+					src="/green/pic/indietro.png" width="40" height="40"></a>
+			</c:otherwise>
 		</c:choose>
 		<a class="navbar-brand" href="#"><img src="/green/pic/logo.png"
 			width="120" height="34"></a>
@@ -25,20 +25,29 @@
 				<button type="button" class="btn-close" data-bs-dismiss="offcanvas"
 					aria-label="Close"></button>
 			</div>
+
 			<div class="offcanvas-body">
+				<c:forEach var="detail" items="${details}">
 					<div class="card" style="width: 18rem;">
-					 	<div class="card-body">
-						    <h5 class="card-title">${detail.quantity} x ${detail.product.name}</h5>
-						    <h6 class="card-subtitle mb-2 text-muted">Categoria</h6>
-						    <p class="card-text">${detail.product.price * detail.quantity}</p>
-						    
-						    <div class="d-grid gap-2 d-md-block">
-							  <button class="btn btn-secondary" type="button">-</button>
-							  <button class="btn btn-danger" type="button">Elimina</button>
-							  <button class="btn btn-secondary" type="button">-</button>
+						<div class="card-body">
+							<h5 class="card-title">${detail.quantity} x
+								${detail.product.name}</h5>
+							<p class="card-text">${detail.product.price *
+								detail.quantity}</p>
+
+							<div class="d-grid gap-2 d-md-block">
+								<a href="/green/home/order/removeOne?id=${detail.product.id}"><button
+										class="btn btn-secondary">-</button></a> <a
+									href="/green/home/order/delete?id=${detail.product.id}"><button
+										class="btn btn-danger">Elimina</button></a> <a
+									href="/green/home/order/add?id=${detail.product.id}"><button
+										class="btn btn-secondary">+</button></a>
 							</div>
 						</div>
-				</div>
+					</div>
+					<br>
+				</c:forEach>
+				<h3>Totale: ${total}&euro;</h3>
 			</div>
 		</div>
 	</div>
