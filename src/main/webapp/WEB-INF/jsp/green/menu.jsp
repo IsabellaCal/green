@@ -29,10 +29,10 @@
 </head>
 
 <body>
+	<!-- NAVBAR -->
+	<%@include file="/green/include/navtop.html"%>
+		
 	<div class="container-fluid">
-
-		<!-- NAVBAR -->
-		<%@include file="/green/include/navtop.html"%>
         
         <!-- PAGE HEADER -->
 		<div class="container">
