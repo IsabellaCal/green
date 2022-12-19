@@ -7,6 +7,10 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Pizzeria Pizza &amp; Pinza</title>
+	<!-- Google font -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;500&family=Righteous&family=Staatliches&display=swap" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="/green/css/prodotto.css">
 	<link rel="stylesheet"
 		href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
@@ -33,8 +37,15 @@
 				<h5 class="card-title">${product.name}</h5>
 				<p class="card-text">${product.description}</p>
 			</div>
+			<ul class="list-group list-group-flush">
+    			<li class="list-group-item">${product.price} Euro <a  class="lmcart-add text-uppercase btn btn-success"> Aggiungi all'Ordine</a></li>
+			</ul>
 		</div>
 	</c:forEach>
+	
+	<!-- SPAZIO TRA CARD E FOOTER -->
+	<br>
+	<br>
 	
 	<!-- FOOTER -->
 	<%@include file="/green/include/navbottom.html"%>
