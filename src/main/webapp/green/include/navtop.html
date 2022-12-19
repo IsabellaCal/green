@@ -1,6 +1,7 @@
 <nav class="navbar sticky-top bg-light fixed-top">
 	<div class="container-fluid">
-		<a class="navbar-brand" href="#"><img src="/green/pic/logo.png" width="120" height="34"></a>
+		<a class="navbar-brand" href="#"><img src="/green/pic/logo.png"
+			width="120" height="34"></a>
 		<button class="navbar-toggler" type="button"
 			data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
 			aria-controls="offcanvasNavbar">
@@ -15,11 +16,27 @@
 					aria-label="Close"></button>
 			</div>
 			<div class="offcanvas-body">
-				<ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="#">Home</a></li>
-					<li class="nav-item"><a class="nav-link" href="/green/home/order">Link</a></li>
-				</ul>
+				<table class="table">
+					<thead>
+						<tr>
+							<th scope="col">Nome prodotto</th>
+							<th scope="col">Quantità</th>
+							<th scope="col">Elimina</th>
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr>
+							<c:forEach var="detail" items="${details}">
+								<tr>
+									<td>${detail.menuId}</td>
+									<td>${detail.quantity}</td>
+									<td><a href="#" type="submit" class="btn btn-danger">Elimina</a></td>
+								</tr>
+							</c:forEach>
+						</tr>
+					</tbody>
+				</table>
 			</div>
 		</div>
 	</div>

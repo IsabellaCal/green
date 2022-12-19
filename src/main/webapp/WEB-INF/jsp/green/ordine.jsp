@@ -34,22 +34,18 @@
 	<table class="table">
 	  <thead>
 	    <tr>
-	      <th scope="col">Categoria</th>
 	      <th scope="col">Nome prodotto</th>
 	      <th scope="col">Quantità</th>
-	      <th scope="col">Prezzo</th>
 	      <th scope="col">Elimina</th>
 	    </tr>
 	  </thead>
 	   
 	  <tbody>
 	    <tr>
-	      <c:forEach var="detail" items="${detailOrder}">
+	      <c:forEach var="detail" items="${details}">
 			<tr>
-				<td>${detail.category}</td>
-				<td>${detail.product}</td>
+				<td>${detail.menuId}</td>
 				<td>${detail.quantity}</td>
-				<td>${detail.price}</td>
 				<td><a href="#" type="submit" class="btn btn-danger">Elimina</a></td>
 			</tr>
 		</c:forEach> 

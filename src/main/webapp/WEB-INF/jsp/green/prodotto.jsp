@@ -38,7 +38,8 @@
 				<p class="card-text">${product.description}</p>
 			</div>
 			<ul class="list-group list-group-flush">
-    			<li class="list-group-item">${product.price} Euro <a  class="lmcart-add text-uppercase btn btn-success"> Aggiungi all'Ordine</a></li>
+    			<li class="list-group-item">${product.price} Euro 
+    			<a href="/green/home/order/add?id=${product.id}" class="lmcart-add text-uppercase btn btn-success"> Aggiungi all'Ordine</a></li>
 			</ul>
 		</div>
 	</c:forEach>

@@ -1,5 +1,7 @@
 package com.example.demo.green;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,8 +20,8 @@ public class ProductCtr {
 	}
 	
 	@GetMapping()
-	public String getProduct(@RequestParam Integer id, Model model) {
-		model.addAttribute("products", repo.findByCategoryId(id));
+	public String getProduct(@RequestParam Integer id, HttpSession session) {
+		session.setAttribute("products", repo.findByCategoryId(id));
 		return "/green/prodotto";
 	}
 }

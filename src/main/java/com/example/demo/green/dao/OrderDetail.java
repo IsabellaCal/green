@@ -24,8 +24,7 @@ public class OrderDetail {
 		
 	}
 	
-	public OrderDetail(Integer orderId, Integer menuId, Integer quantity) {
-		this.orderId = orderId;
+	public OrderDetail(Integer menuId, Integer quantity) {
 		this.menuId = menuId;
 		this.quantity = quantity;
 	}
