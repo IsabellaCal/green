@@ -27,3 +27,7 @@ a{
 	color: white !important;
 	float:right;
 }
+
+.nav-link {
+	color: black !important;
+}
