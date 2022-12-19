@@ -42,6 +42,7 @@ public class OrderCtr {
 			details.add(new OrderDetail(repo.findById(id).get(), 1));
 		}
 		session.setAttribute("total", svc.getTotal(details));
+		session.setAttribute("numberItems", svc.getNumberItems(details));
 		session.setAttribute("details", details);
 		return "/green/prodotto";
 	}
@@ -60,6 +61,7 @@ public class OrderCtr {
 			details.remove(detail.get());
 		}
 		session.setAttribute("total", svc.getTotal(details));
+		session.setAttribute("numberItems", svc.getNumberItems(details));
 		session.setAttribute("details", details);
 		return "/green/prodotto";
 	}
@@ -83,6 +85,7 @@ public class OrderCtr {
 			}
 		}
 		session.setAttribute("total", svc.getTotal(details));
+		session.setAttribute("numberItems", svc.getNumberItems(details));
 		session.setAttribute("details", details);
 		return "/green/prodotto";
 	}
