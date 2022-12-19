@@ -4,7 +4,7 @@
 
 
 <!DOCTYPE html>
-<html>
+<html lang="it">
 
 <head>
 	<meta charset="UTF-8">
@@ -43,7 +43,7 @@
 		<!-- CARDS -->
 		<c:forEach var="category" items="${categories}">
 			<a href="/green/home/product?id=${category.id}">
-				<div class="card mb-3">
+				<div class="carta card mb-3">
 					<img src="/green/pic/category/${category.imgpath}"
 						class="card-img-top" alt="${category.name}">
 					<div class="card-body">

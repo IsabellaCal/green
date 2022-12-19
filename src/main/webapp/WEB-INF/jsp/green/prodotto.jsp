@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!DOCTYPE html>
-<html>
+<html lang="it">
 <head>
 	<meta charset="UTF-8">
 	<title>Pizzeria Pizza &amp; Pinza</title>
@@ -30,7 +30,7 @@
 	
 	<!-- CARDS -->
 	<c:forEach var="product" items="${products}">
-		<div class="card mb-3">
+		<div class="carta card mb-3">
 			<img src="/green/pic/menu/${product.imgpath}" class="card-img-top"
 				alt="${product.name}">
 			<div class="card-body">
@@ -38,8 +38,8 @@
 				<p class="card-text">${product.description}</p>
 			</div>
 			<ul class="list-group list-group-flush">
-    			<li class="list-group-item">${product.price} Euro 
-    			<a href="/green/home/order/add?id=${product.id}" class="lmcart-add text-uppercase btn btn-success"> Aggiungi all'Ordine</a></li>
+    			<li class="list-group-item">${product.price}&euro; 
+    			<a href="/green/home/order/add?id=${product.id}" class="lmcart-add text-uppercase bottone btn btn-success"> Aggiungi all'Ordine</a></li>
 			</ul>
 		</div>
 	</c:forEach>
