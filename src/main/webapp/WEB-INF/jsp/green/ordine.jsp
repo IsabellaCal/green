@@ -30,7 +30,18 @@
 	<!-- NAVBAR -->
 	<%@include file="/green/include/navtop.html"%>
 	
-	<!-- TABELLA -->
+	<!-- CARD -->
+	<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">${product.quantity} x Nome prodotto</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Categoria</h6>
+    <p class="card-text">${product.price}</p>
+    <a href="#" class="card-link">Elimina</a>
+    <a href="#" class="card-link">Aggiungi</a>
+  </div>
+</div>
+	
+	<!-- TABELLA 
 	<table class="table">
 	  <thead>
 	    <tr>
@@ -51,7 +62,7 @@
 		</c:forEach> 
 	    </tr>
 	  </tbody>
-	</table>
+	</table>  -->
 
 	<!-- FOOTER -->
 	<%@include file="/green/include/navbottom.html"%>
