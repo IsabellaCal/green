@@ -2,7 +2,7 @@ drop table if exists order_detail;
 DROP TABLE IF EXISTS MENU cascade;
 drop table if exists category;
 drop table if exists "order" cascade;
-drop table if exists "user" cascade;
+drop table if exists utente cascade;
 
 
 create table category(
@@ -43,21 +43,21 @@ insert into menu (name, price, imgpath, description, category_id) values
 	('birra bionda alla spina', 3.50, 'birraBionda.jpg', 'Pils, biondo dorato, gusto ricco e distintivo (0.20 cl).', 5),
 	('birra rossa alla spina', 3.50, 'birraRossa.jpg', 'Weizern, gusto rinfrescante e fruttato (0.20 cl).', 5);
 
-create table "user"(
-	user_id serial primary key,
+create table utente(
+	utente_id serial primary key,
 	username varchar(20) unique,
-	"password" varchar(15)
+	passkey varchar(15)
 );
 
-insert into "user" (username, "password") values ('Giulia@polito', 'password');
+insert into utente (username, passkey) values ('Giulia@polito', 'password');
 
 
 
 create table "order"(
 	order_id serial primary key,
 	total decimal(5,2),
-	user_id integer,
-	foreign key (user_id) references "user" (user_id)
+	utente_id integer,
+	foreign key (utente_id) references utente (utente_id)
 );
 
 insert into "order" (total) values (10);
