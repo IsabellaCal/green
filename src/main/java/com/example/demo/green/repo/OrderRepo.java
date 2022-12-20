@@ -5,9 +5,7 @@ import org.springframework.data.repository.CrudRepository;
 
 import com.example.demo.green.dao.Order;
 
-public interface OrderRepo extends CrudRepository<Order, Integer>{
-	
-	@Query(value = "select * from \"order\" o order by o.order_id desc", nativeQuery=true)
+public interface OrderRepo extends CrudRepository<Order, Integer> {
+	@Query(value = "select * from \"order\" o order by o.order_id desc", nativeQuery = true)
 	Iterable<Order> findCurrentOrder();
-	
 }

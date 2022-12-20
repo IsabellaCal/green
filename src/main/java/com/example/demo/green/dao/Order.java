@@ -16,21 +16,12 @@ public class Order {
 	private Integer id;
 	private double total;
 	private Integer userId;
-	
+
 	public Order() {
-		
 	}
-	
+
 	public Order(double total, Integer userId) {
 		this.total = total;
-		this.userId = userId;
-	}
-
-	public Integer getUserId() {
-		return userId;
-	}
-
-	public void setUserId(Integer userId) {
 		this.userId = userId;
 	}
 
@@ -48,6 +39,14 @@ public class Order {
 
 	public void setTotal(double total) {
 		this.total = total;
+	}
+
+	public Integer getUserId() {
+		return userId;
+	}
+
+	public void setUserId(Integer userId) {
+		this.userId = userId;
 	}
 
 	@Override
@@ -72,9 +71,4 @@ public class Order {
 	public String toString() {
 		return "Order [id=" + id + ", total=" + total + ", userId=" + userId + "]";
 	}
-
-	
-	
-	
-	
 }

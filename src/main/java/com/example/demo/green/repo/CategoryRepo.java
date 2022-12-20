@@ -4,6 +4,5 @@ import org.springframework.data.repository.CrudRepository;
 
 import com.example.demo.green.dao.Category;
 
-public interface CategoryRepo extends CrudRepository<Category, Integer>{
-	
+public interface CategoryRepo extends CrudRepository<Category, Integer> {
 }

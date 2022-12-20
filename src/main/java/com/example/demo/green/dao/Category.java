@@ -18,11 +18,10 @@ public class Category {
 	private String imgpath;
 	private String description;
 	private String href;
-	
+
 	public Category() {
-		
 	}
-	
+
 	public Category(String name, String imgpath, String description, String href) {
 		this.name = name;
 		this.imgpath = imgpath;
@@ -94,7 +93,4 @@ public class Category {
 		return "Category [id=" + id + ", name=" + name + ", imgpath=" + imgpath + ", description=" + description
 				+ ", href=" + href + "]";
 	}
-
-	
-	
 }

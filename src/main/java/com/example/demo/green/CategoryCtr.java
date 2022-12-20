@@ -10,17 +10,16 @@ import com.example.demo.green.repo.CategoryRepo;
 @Controller
 @RequestMapping("/green/home")
 public class CategoryCtr {
-	
+
 	private CategoryRepo repo;
-	
+
 	public CategoryCtr(CategoryRepo repo) {
 		this.repo = repo;
 	}
-	
+
 	@GetMapping()
 	public String getAll(Model model) {
 		model.addAttribute("categories", repo.findAll());
 		return "/green/menu";
 	}
-	
 }

@@ -12,23 +12,22 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="order_detail")
+@Table(name = "order_detail")
 public class OrderDetail {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "DETAIL_ID")
 	private Integer id;
 	private Integer orderId;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "MENU_ID")
 	private Product product;
 	private Integer quantity;
-	
+
 	public OrderDetail() {
-		
 	}
-	
+
 	public OrderDetail(Product product, Integer quantity) {
 		this.product = product;
 		this.quantity = quantity;
@@ -88,5 +87,5 @@ public class OrderDetail {
 	public String toString() {
 		return "OrderDetail [id=" + id + ", orderId=" + orderId + ", product=" + product + ", quantity=" + quantity
 				+ "]";
-	}	
+	}
 }
