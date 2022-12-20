@@ -14,7 +14,7 @@ public class OrderSvc {
 		}
 		return total;
 	}
-	
+
 	public Integer getNumberItems(List<OrderDetail> details) {
 		Integer result = 0;
 		for (int i = 0; i < details.size(); i++) {

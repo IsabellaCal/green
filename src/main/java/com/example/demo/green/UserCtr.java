@@ -25,7 +25,6 @@ public class UserCtr {
 	@PostMapping("/login")
 	public String login(@RequestParam String username, @RequestParam String password, HttpSession session,
 			Model model) {
-
 		username = username.trim();
 		password = password.trim();
 		if (username.isBlank() || username.isEmpty() || password.isBlank() || password.isEmpty()
@@ -63,7 +62,7 @@ public class UserCtr {
 			return "/green/menu";
 		}
 	}
-	
+
 	@GetMapping("/logout")
 	public String logout(HttpSession session) {
 		session.invalidate();
@@ -74,5 +73,4 @@ public class UserCtr {
 	public String accessPage() {
 		return "/green/registrati";
 	}
-
 }

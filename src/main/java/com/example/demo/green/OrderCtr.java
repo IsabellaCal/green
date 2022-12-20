@@ -47,6 +47,7 @@ public class OrderCtr {
 		return "/green/prodotto";
 	}
 
+	@SuppressWarnings("unchecked")
 	@GetMapping("/delete")
 	public String deleteProduct(@RequestParam Integer id, HttpSession session) {
 		List<OrderDetail> details;
@@ -66,6 +67,7 @@ public class OrderCtr {
 		return "/green/prodotto";
 	}
 	
+	@SuppressWarnings("unchecked")
 	@GetMapping("/removeOne")
 	public String removeOne(@RequestParam Integer id, HttpSession session) {
 		List<OrderDetail> details;

@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name ="menu")
+@Table(name = "menu")
 public class Product {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,11 +21,10 @@ public class Product {
 	private String imgpath;
 	private String description;
 	private Integer categoryId;
-	
+
 	public Product() {
-		
 	}
-	
+
 	public Product(String name, double price, String imgpath, String description, Integer categoryId) {
 		this.name = name;
 		this.price = price;
@@ -106,6 +105,5 @@ public class Product {
 	public String toString() {
 		return "Product [id=" + id + ", name=" + name + ", price=" + price + ", imgpath=" + imgpath + ", description="
 				+ description + ", categoryId=" + categoryId + "]";
-	}	
-
+	}
 }
