@@ -34,15 +34,18 @@ public class UserCtr {
 				|| password.length() > 15 || username.length() > 20) {
 			model.addAttribute("errorLogin",
 					"Devi compilare i campi (username massimo 20 caratteri e password massimo 15 caratteri)");
+			model.addAttribute("usernameLogin", username.substring(0, 20));
 			return "/green/registrati";
 		} else if (repo.findByUsername(username).iterator().hasNext()
 				&& repo.findByUsername(username).iterator().next().getPassword().equals(password)) {
 			session.setAttribute("userId", repo.findByUsername(username).iterator().next().getId());
-			model.addAttribute("categories", categoryRepo.findAll());
+			session.setAttribute("usernameCurrent", repo.findByUsername(username).iterator().next().getUsername());
+			model.addAttribute("message", "Login avvenuto con successo");
 			return "/green/menu";
 		} else {
 			model.addAttribute("errorLogin",
 					"Username o password errati, se non sei registrato compila il form in basso");
+			model.addAttribute("usernameLogin", username);
 			return "/green/registrati";
 		}
 	}
@@ -56,15 +59,18 @@ public class UserCtr {
 				|| password.length() > 15 || username.length() > 20) {
 			model.addAttribute("errorRegistration",
 					"Devi compilare i campi (username massimo 20 caratteri e password massimo 15 caratteri)");
+			model.addAttribute("usernameRegistration", username.substring(0, 20));
 			return "/green/registrati";
 		} else if (repo.findByUsername(username).iterator().hasNext()) {
 			model.addAttribute("errorRegistration", "Username già in uso, impostane uno diverso");
+			model.addAttribute("usernameRegistration", username);
 			return "/green/registrati";
 		} else {
 			User user = new User(username, password);
 			repo.save(user);
 			session.setAttribute("userId", user.getId());
-			model.addAttribute("categories", categoryRepo.findAll());
+			session.setAttribute("usernameCurrent", user.getUsername());
+			model.addAttribute("message", "Registrazione avvenuta con successo");
 			return "/green/menu";
 		}
 	}
@@ -77,8 +83,8 @@ public class UserCtr {
 
 	@GetMapping
 	public String accessPage(HttpSession session, Model model) {
-		if(session.getAttribute("userId") != null) {
-			model.addAttribute("categories", categoryRepo.findAll());
+		session.setAttribute("categories", categoryRepo.findAll());
+		if (session.getAttribute("userId") != null) {
 			return "/green/menu";
 		}
 		return "/green/registrati";

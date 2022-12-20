@@ -41,7 +41,7 @@
 				<form action="/green/access/login" method="POST">
 					<div class="mb-3">
 						<label class="form-label">Username</label> 
-						<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="esempio@mail.com" name="username" required>
+						<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="esempio@mail.com" name="username" value="${usernameLogin}" required>
 					</div>
 					<div class="mb-3">
 						<label for="exampleInputPassword1" class="form-label">Password</label>
@@ -63,7 +63,7 @@
 				<form action="/green/access/registration" method="POST">
 					<div class="mb-3">
 						<label class="form-label">Username</label> 
-						<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="esempio@mail.com" name="username" required>
+						<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="esempio@mail.com" name="username" value="${usernameRegistration}" required>
 					</div>
 					<div class="mb-3">
 						<label for="exampleInputPassword1" class="form-label">Password</label>
