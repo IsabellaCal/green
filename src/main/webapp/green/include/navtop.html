@@ -21,32 +21,46 @@
 		<div class="offcanvas offcanvas-end" tabindex="-1"
 			id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
 			<div class="offcanvas-header">
-				<h5 class="offcanvas-title" id="offcanvasNavbarLabel">Ciao ${usernameCurrent}, ecco il tuo ordine</h5>
-				<button type="button" class="btn-close" data-bs-dismiss="offcanvas"
-					aria-label="Close"></button>
+				<c:choose>
+					<c:when test="${not empty userId}">
+						<h5 class="offcanvas-title" id="offcanvasNavbarLabel">Ciao ${usernameCurrent}, ecco il tuo ordine</h5>
+					</c:when>
+					<c:otherwise>
+						<h5 class="offcanvas-title" id="offcanvasNavbarLabel">Il tuo ordine: accedi per continuare</h5>
+					</c:otherwise>
+				</c:choose>
+				<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
 			</div>
 
 			<div class="offcanvas-body">
-				<c:forEach var="detail" items="${details}">
-					<div class="card" style="width: 18rem;">
-						<div class="card-body">
-							<h5 class="card-title">${detail.quantity} x
-								${detail.product.name}</h5>
-							<p class="card-text">${detail.product.price *
-								detail.quantity}&euro;</p>
-
-							<div class="d-grid gap-2 d-md-block">
-								<a href="/green/home/order/removeOne?id=${detail.product.id}"><button
-										class="btn btn-secondary">-</button></a> <a
-									href="/green/home/order/delete?id=${detail.product.id}"><button
-										class="btn btn-danger">Elimina</button></a> <a
-									href="/green/home/order/add?id=${detail.product.id}"><button
-										class="btn btn-secondary">+</button></a>
+				<c:choose>
+					<c:when test="${not empty details}">
+						<c:forEach var="detail" items="${details}">
+							<div class="card" style="width: 18rem;">
+								<div class="card-body">
+									<h5 class="card-title">${detail.quantity} x
+										${detail.product.name}</h5>
+									<p class="card-text">${detail.product.price *
+										detail.quantity}&euro;</p>
+		
+									<div class="d-grid gap-2 d-md-block">
+										<a href="/green/home/order/removeOne?id=${detail.product.id}"><button
+												class="btn btn-secondary">-</button></a> <a
+											href="/green/home/order/delete?id=${detail.product.id}"><button
+												class="btn btn-danger">Elimina</button></a> <a
+											href="/green/home/order/add?id=${detail.product.id}"><button
+												class="btn btn-secondary">+</button></a>
+									</div>
+								</div>
 							</div>
-						</div>
-					</div>
-					<br>
-				</c:forEach>
+							<br>
+						</c:forEach>
+					</c:when>
+					<c:otherwise>
+						<h6>Il tuo carrello &egrave; vuoto</h6>
+					</c:otherwise>
+				</c:choose>
+				
 				<h3>Totale: ${total}&euro;</h3>
 			</div>
 		</div>
