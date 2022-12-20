@@ -8,7 +8,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.hibernate.annotations.SQLInsert;
+
 @Entity
+@SQLInsert(sql = "insert into \"user\" (\"password\", username) values (?, ?)")
 public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

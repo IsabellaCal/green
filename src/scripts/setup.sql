@@ -49,7 +49,8 @@ create table "user"(
 	"password" varchar(15)
 );
 
-insert into "user" (username, "password") values ('Giulia', 'password');
+insert into "user" (username, "password") values ('Giulia@polito', 'password');
+
 
 
 create table "order"(

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.demo.green.dao.User;
+import com.example.demo.green.repo.CategoryRepo;
 import com.example.demo.green.repo.UserRepo;
 
 @Controller
@@ -17,9 +18,11 @@ import com.example.demo.green.repo.UserRepo;
 public class UserCtr {
 
 	private UserRepo repo;
+	private CategoryRepo categoryRepo;
 
-	public UserCtr(UserRepo repo) {
+	public UserCtr(UserRepo repo, CategoryRepo categoryRepo) {
 		this.repo = repo;
+		this.categoryRepo = categoryRepo;
 	}
 
 	@PostMapping("/login")
@@ -35,6 +38,7 @@ public class UserCtr {
 		} else if (repo.findByUsername(username).iterator().hasNext()
 				&& repo.findByUsername(username).iterator().next().getPassword().equals(password)) {
 			session.setAttribute("userId", repo.findByUsername(username).iterator().next().getId());
+			model.addAttribute("categories", categoryRepo.findAll());
 			return "/green/menu";
 		} else {
 			model.addAttribute("errorLogin",
@@ -57,8 +61,10 @@ public class UserCtr {
 			model.addAttribute("errorRegistration", "Username già in uso, impostane uno diverso");
 			return "/green/registrati";
 		} else {
-			repo.save(new User(username, password));
-			session.setAttribute("userId", repo.findByUsername(username).iterator().next().getId());
+			User user = new User(username, password);
+			repo.save(user);
+			session.setAttribute("userId", user.getId());
+			model.addAttribute("categories", categoryRepo.findAll());
 			return "/green/menu";
 		}
 	}
@@ -70,7 +76,11 @@ public class UserCtr {
 	}
 
 	@GetMapping
-	public String accessPage() {
+	public String accessPage(HttpSession session, Model model) {
+		if(session.getAttribute("userId") != null) {
+			model.addAttribute("categories", categoryRepo.findAll());
+			return "/green/menu";
+		}
 		return "/green/registrati";
 	}
 }
