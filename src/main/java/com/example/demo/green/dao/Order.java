@@ -15,14 +15,14 @@ public class Order {
 	@Column(name = "ORDER_ID")
 	private Integer id;
 	private double total;
-	private Integer userId;
+	private Integer utenteId;
 
 	public Order() {
 	}
 
 	public Order(double total, Integer userId) {
 		this.total = total;
-		this.userId = userId;
+		this.utenteId = userId;
 	}
 
 	public Integer getId() {
@@ -41,17 +41,17 @@ public class Order {
 		this.total = total;
 	}
 
-	public Integer getUserId() {
-		return userId;
+	public Integer getUtenteId() {
+		return utenteId;
 	}
 
-	public void setUserId(Integer userId) {
-		this.userId = userId;
+	public void setUtenteId(Integer userId) {
+		this.utenteId = userId;
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(id, total, userId);
+		return Objects.hash(id, total, utenteId);
 	}
 
 	@Override
@@ -64,11 +64,11 @@ public class Order {
 			return false;
 		Order other = (Order) obj;
 		return Objects.equals(id, other.id) && Double.doubleToLongBits(total) == Double.doubleToLongBits(other.total)
-				&& Objects.equals(userId, other.userId);
+				&& Objects.equals(utenteId, other.utenteId);
 	}
 
 	@Override
 	public String toString() {
-		return "Order [id=" + id + ", total=" + total + ", userId=" + userId + "]";
+		return "Order [id=" + id + ", total=" + total + ", utenteId=" + utenteId + "]";
 	}
 }

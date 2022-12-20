@@ -11,21 +11,20 @@ import javax.persistence.Id;
 import org.hibernate.annotations.SQLInsert;
 
 @Entity
-@SQLInsert(sql = "insert into \"user\" (\"password\", username) values (?, ?)")
-public class User {
+public class Utente {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "USER_ID")
+	@Column(name = "UTENTE_ID")
 	private Integer id;
 	private String username;
-	private String password;
+	private String passkey;
 
-	public User() {
+	public Utente() {
 	}
 
-	public User(String username, String password) {
+	public Utente(String username, String password) {
 		this.username = username;
-		this.password = password;
+		this.passkey = password;
 	}
 
 	public Integer getId() {
@@ -44,17 +43,17 @@ public class User {
 		this.username = username;
 	}
 
-	public String getPassword() {
-		return password;
+	public String getPasskey() {
+		return passkey;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setPasskey(String password) {
+		this.passkey = password;
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(id, password, username);
+		return Objects.hash(id, passkey, username);
 	}
 
 	@Override
@@ -65,13 +64,13 @@ public class User {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		User other = (User) obj;
-		return Objects.equals(id, other.id) && Objects.equals(password, other.password)
+		Utente other = (Utente) obj;
+		return Objects.equals(id, other.id) && Objects.equals(passkey, other.passkey)
 				&& Objects.equals(username, other.username);
 	}
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", username=" + username + ", password=" + password + "]";
+		return "User [id=" + id + ", username=" + username + ", passkey=" + passkey + "]";
 	}
 }

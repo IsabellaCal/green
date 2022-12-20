@@ -9,18 +9,18 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.example.demo.green.dao.User;
+import com.example.demo.green.dao.Utente;
 import com.example.demo.green.repo.CategoryRepo;
-import com.example.demo.green.repo.UserRepo;
+import com.example.demo.green.repo.UtenteRepo;
 
 @Controller
 @RequestMapping("/green/access")
-public class UserCtr {
+public class UtenteCtr {
 
-	private UserRepo repo;
+	private UtenteRepo repo;
 	private CategoryRepo categoryRepo;
 
-	public UserCtr(UserRepo repo, CategoryRepo categoryRepo) {
+	public UtenteCtr(UtenteRepo repo, CategoryRepo categoryRepo) {
 		this.repo = repo;
 		this.categoryRepo = categoryRepo;
 	}
@@ -37,7 +37,7 @@ public class UserCtr {
 			model.addAttribute("usernameLogin", username.substring(0, 20));
 			return "/green/registrati";
 		} else if (repo.findByUsername(username).iterator().hasNext()
-				&& repo.findByUsername(username).iterator().next().getPassword().equals(password)) {
+				&& repo.findByUsername(username).iterator().next().getPasskey().equals(password)) {
 			session.setAttribute("userId", repo.findByUsername(username).iterator().next().getId());
 			session.setAttribute("usernameCurrent", repo.findByUsername(username).iterator().next().getUsername());
 			model.addAttribute("message", "Login avvenuto con successo");
@@ -66,7 +66,7 @@ public class UserCtr {
 			model.addAttribute("usernameRegistration", username);
 			return "/green/registrati";
 		} else {
-			User user = new User(username, password);
+			Utente user = new Utente(username, password);
 			repo.save(user);
 			session.setAttribute("userId", user.getId());
 			session.setAttribute("usernameCurrent", user.getUsername());
