@@ -1,5 +1,7 @@
 package com.example.demo.green;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,8 +20,8 @@ public class CategoryCtr {
 	}
 
 	@GetMapping()
-	public String getAll(Model model) {
-		model.addAttribute("categories", repo.findAll());
+	public String getAll(HttpSession session) {
+		session.setAttribute("categories", repo.findAll());
 		return "/green/menu";
 	}
 }
