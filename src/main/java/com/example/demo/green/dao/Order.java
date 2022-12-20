@@ -15,13 +15,23 @@ public class Order {
 	@Column(name = "ORDER_ID")
 	private Integer id;
 	private double total;
+	private Integer userId;
 	
 	public Order() {
 		
 	}
 	
-	public Order(double total) {
+	public Order(double total, Integer userId) {
 		this.total = total;
+		this.userId = userId;
+	}
+
+	public Integer getUserId() {
+		return userId;
+	}
+
+	public void setUserId(Integer userId) {
+		this.userId = userId;
 	}
 
 	public Integer getId() {
@@ -42,7 +52,7 @@ public class Order {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(id, total);
+		return Objects.hash(id, total, userId);
 	}
 
 	@Override
@@ -54,13 +64,17 @@ public class Order {
 		if (getClass() != obj.getClass())
 			return false;
 		Order other = (Order) obj;
-		return Objects.equals(id, other.id) && Double.doubleToLongBits(total) == Double.doubleToLongBits(other.total);
+		return Objects.equals(id, other.id) && Double.doubleToLongBits(total) == Double.doubleToLongBits(other.total)
+				&& Objects.equals(userId, other.userId);
 	}
 
 	@Override
 	public String toString() {
-		return "Order [id=" + id + ", total=" + total + "]";
+		return "Order [id=" + id + ", total=" + total + ", userId=" + userId + "]";
 	}
+
+	
+	
 	
 	
 }

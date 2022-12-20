@@ -49,6 +49,8 @@ create table "user"(
 	"password" varchar(15)
 );
 
+insert into "user" (username, "password") values ('Giulia', 'password');
+
 
 create table "order"(
 	order_id serial primary key,
