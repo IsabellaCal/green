@@ -13,13 +13,33 @@
 				<li><a class="dropdown-item" href="/green/home/product?id=5">Bevande</a></li>
 			</ul>
 		</div>
+		<div class="p-2">
+			<a class="nav-link active" aria-current="page" href="/green/home">Logout</a>
+		</div>
+		<!-- CERCA 
 		<div class="p-2 dropup-center dropup">
 			<a class="nav-link dropdown-toggle" href="#" role="button"
 				data-bs-toggle="dropdown" aria-expanded="false">Cerca</a>
 			<ul class="dropdown-menu">
-				<li><a class="dropdown-item" href="#">Cerca</a></li>
+			<form action=""><li>
+		<c:if test="${not empty errorSearchMessage}">
+			<span>${errorSearchMessage}</span>
+		</c:if>
+		<div>
+			<div class="row mb-3">
+				<div class="col-sm-4">
+					<input class="form-control" name="string" placeholder="Cerca">
+				</div>
+				<div class="col-sm-5">
+					<button class="btn btn-success" type="submit">Cerca</button>
+				</div>
+			</div>
+		</div>
+	</form>
+			</li>
 			</ul>
 		</div>
+		-->
 		<div class="p-2 dropup-center dropup">
 			<a class="nav-link dropdown-toggle" href="#" role="button"
 				data-bs-toggle="dropdown" aria-expanded="false">Contatti</a>
