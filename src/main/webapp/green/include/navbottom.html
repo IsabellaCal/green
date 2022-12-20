@@ -13,9 +13,9 @@
 				<li><a class="dropdown-item" href="/green/home/product?id=5">Bevande</a></li>
 			</ul>
 		</div>
-		<div class="p-2">
+		<!-- <div class="p-2">
 			<a class="nav-link active" aria-current="page" href="/green/access/logout">Logout</a>
-		</div>
+		</div> -->
 		<!-- CERCA 
 		<div class="p-2 dropup-center dropup">
 			<a class="nav-link dropdown-toggle" href="#" role="button"
@@ -55,8 +55,27 @@
 				data-bs-toggle="dropdown" aria-expanded="false">Condividi</a>
 			<ul class="dropdown-menu">
 				<li><a class="dropdown-item" href="#">Facebook</a></li>
-							<li><a class="dropdown-item" href="#">WhatsApp</a></li>
-							<li><a class="dropdown-item" href="#">Email</a></li>
+				<li><a class="dropdown-item" href="#">WhatsApp</a></li>
+				<li><a class="dropdown-item" href="#">Email</a></li>
 			</ul>
+		</div>
+		<div class="p-2 dropup-center dropup">
+			<a class="nav-link dropdown-toggle" href="#" role="button"
+				data-bs-toggle="dropdown" aria-expanded="false">Il mio profilo</a>
+				<c:choose>
+					<c:when test="${not empty userId}">
+						<ul class="dropdown-menu">
+							<li><a class="dropdown-item" href="/green/home/profile">Storico ordini</a></li>
+							<li><a class="dropdown-item" href="/green/home/profile">Modifica</a></li>
+							<li><a class="dropdown-item" href="/green/home/profile">Logout</a></li>
+						</ul>
+					</c:when>
+					<c:otherwise>
+						<ul class="dropdown-menu">
+							<li><a class="dropdown-item" href="/green/access">Accedi</a></li>
+						</ul>
+					</c:otherwise>
+				</c:choose>
+				
 		</div>
 </div>

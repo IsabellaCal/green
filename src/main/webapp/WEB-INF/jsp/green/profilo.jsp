@@ -1,14 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
-<html lang="it">
-
+<html>
 <head>
 	<meta charset="UTF-8">
-	<title>Pizzeria Pizza &amp; Pinza</title>
+	<title>Il tuo profilo</title>
 	<!-- Google font -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,40 +22,41 @@
 		crossorigin="anonymous">
 	</script>
 </head>
-
 <body>
 	<!-- NAVBAR -->
 	<%@include file="/green/include/navtop.html"%>
-		
+	
 	<div class="container-fluid">
-        
-        <!-- PAGE HEADER -->
-		<div class="container">
-			<img class="header" src="/green/pic/category/header.png">
-			<h1 class="centered">Pizza &amp; Pinsa</h1>
-		</div>
-
-		<!-- CARDS -->
-		<c:forEach var="category" items="${categories}">
-			<a href="/green/home/product?id=${category.id}">
-				<div class="carta card mb-3">
-					<img src="/green/pic/category/${category.imgpath}"
-						class="card-img-top" alt="${category.name}">
-					<div class="card-body">
-						<h5 class="card-title">${category.name}</h5>
-						<p class="card-text">${category.description}</p>
-					</div>
-				</div>
-			</a>
-		</c:forEach>
+		<h3>I tuoi ordini</h3>
+		<table class="table">
+		  <thead>
+		    <tr>
+		      <th scope="col">Data ordine</th>
+		      <th scope="col">N.ordine</th>
+		      <th scope="col">Bo</th>
+		    </tr>
+		  </thead>
+		   
+		  <tbody>
+		    <tr>
+		      <c:forEach var="detail" items="${details}">
+				<tr>
+					<td>${detail.menuId}</td>
+					<td>${detail.quantity}</td>
+					<td><a href="#" type="submit" class="btn btn-danger">Elimina</a></td>
+				</tr>
+			</c:forEach> 
+		    </tr>
+		  </tbody>
+		</table>
 		
-		<!-- SPAZI VUOTI PER NON FARE TOCCARE L'ULTIMA CARD CON IL FOOTER -->
-		<br>
-		<br>
-
-		<!-- FOOTER -->
-		<%@include file="/green/include/navbottom.html"%>
-
+		<h3>Modifica i tuoi dati</h3>
+		
+		<h3>Logout</h3>
+		<h4>Sei sicuro di voler fare il logout?</h4>
+		<a href="/green/access/logout" class="btn btn-outline-light">Sì</a>
+        <a href="/green/home" class="btn btn-outline-light">No, torna al menu</a>
 	</div>
+	
 </body>
 </html>
