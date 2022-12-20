@@ -26,22 +26,22 @@
 </head>
 <body>
 	<div class="container-fluid">
-	<h1 id="titolo">Per ordinare, accedi o registrati</h1>
+	<h1 id="titolo">Accedi o registrati per ordinare</h1>
 	
 	<!-- CARDS -->
 		<div class="row">
 		
 		  <div class="col-sm-6">
-		    <div class="card">
+		    <div class="card h-100">
 		      <div class="card-body">
 		        <h5 class="card-title">Accedi</h5>
 		        <c:if test="${not empty errorLogin}">
-					<p>${errorLogin}</p>
+					<p id="rosso">${errorLogin}</p>
 				</c:if>
 				<form action="/green/access/login" method="POST">
 					<div class="mb-3">
 						<label class="form-label">Username</label> 
-						<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="esempio@mail.com" name="username" required>
+						<input type="text" class="form-control" placeholder="Inserisci il tuo Username" name="username" required>
 					</div>
 					<div class="mb-3">
 						<label for="exampleInputPassword1" class="form-label">Password</label>
@@ -53,21 +53,23 @@
 		    </div>
 		  </div>
 		  
-		  <div class="col-sm-6">
-		    <div class="card">
+		  <div class="col-sm-6 ">
+		    <div class="card h-100">
 		      <div class="card-body">
 		        <h5 class="card-title">Registrati</h5>
 				<c:if test="${not empty errorRegistration}">
-					<p>${errorRegistration}</p>
+					<p id="rosso">${errorRegistration}</p>
 				</c:if>
 				<form action="/green/access/registration" method="POST">
 					<div class="mb-3">
 						<label class="form-label">Username</label> 
-						<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="esempio@mail.com" name="username" required>
+						<input type="text" class="form-control" placeholder="Scegli il tuo username" name="username" required>
+						<div class="form-text">Deve contenere massimo 20 caratteri.</div>
 					</div>
 					<div class="mb-3">
 						<label for="exampleInputPassword1" class="form-label">Password</label>
-						<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Inserisci password" name="password" required>
+						<input type="password" class="form-control" id="inputPassword5" placeholder="Inserisci password" name="password" required>
+						<div class="form-text">Deve contenere massimo 15 caratteri.</div>
 					</div>
 					<button type="submit" class="btn btn-success">Registrati</button>
 				</form>
