@@ -8,22 +8,19 @@ body  {
 
 h1, h2, h3, h4, h5, h6  {
 	font-family: "staatliches", sans-serif !important;
-	color: black !important;
 }
 
 #foto {
-	background-repeat: no-repeat;
- 	background-attachment: fixed;
- 	background-size: cover;
- 	height: 600px !important;
+	 display:block;
+ 	 width:100%; 
+	 height:100%;
+	 object-fit: cover;
 }
 
-.centered {
-	position: absolute;
-	left: 50%;
-	bottom: 8px;
-	transform: translate(-50%, -50%);
-	color: black !important;
-	font-size: 40px;
-	
+.titolo {
+	text-align:center;
+	background-color: #1B4D3E;
+	color: white !important;
+	padding-top: 5px;
+	padding-bottom: 50px;
 }
