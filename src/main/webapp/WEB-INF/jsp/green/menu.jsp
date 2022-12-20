@@ -29,6 +29,7 @@
 
 <body>
 	<!-- NAVBAR -->
+	<c:set var = "type" value = "menu"/>
 	<%@include file="/green/include/navtop.html"%>
 		
 	<div class="container-fluid">

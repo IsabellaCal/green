@@ -1,7 +1,7 @@
 <nav class="navbar sticky-top bg-light fixed-top">
 	<div class="container-fluid">
 		<c:choose>
-			<c:when test="${not empty categories}">
+			<c:when test="${type eq 'menu'}">
 				<a class="navbar-brand" href="/index.html"> <img
 					src="/green/pic/indietro.png" width="40" height="40"></a>
 			</c:when>
@@ -10,6 +10,7 @@
 					src="/green/pic/indietro.png" width="40" height="40"></a>
 			</c:otherwise>
 		</c:choose>
+		
 		<a class="navbar-brand" href="#"><img src="/green/pic/logo.png"
 			width="120" height="34"></a>
 		<button class="navbar-toggler" type="button"
