@@ -41,7 +41,7 @@
 				<form action="/green/access/login" method="POST">
 					<div class="mb-3">
 						<label class="form-label">Username</label> 
-						<input type="text" class="form-control" placeholder="Inserisci il tuo Username" name="username" required>
+						<input type="text" class="form-control" placeholder="Inserisci il tuo Username" name="username" required value="${usernameLogin}">
 					</div>
 					<div class="mb-3">
 						<label for="exampleInputPassword1" class="form-label">Password</label>
@@ -63,7 +63,7 @@
 				<form action="/green/access/registration" method="POST">
 					<div class="mb-3">
 						<label class="form-label">Username</label> 
-						<input type="text" class="form-control" placeholder="Scegli il tuo username" name="username" required>
+						<input type="text" class="form-control" placeholder="Scegli il tuo username" name="username" required value="${usernameRegistration}">
 						<div class="form-text">Deve contenere massimo 20 caratteri.</div>
 					</div>
 					<div class="mb-3">
