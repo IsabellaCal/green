@@ -27,7 +27,7 @@
 						<h5 class="offcanvas-title" id="offcanvasNavbarLabel">Ciao ${usernameCurrent}, ecco il tuo ordine</h5>
 					</c:when>
 					<c:otherwise>
-						<h5 class="offcanvas-title" id="offcanvasNavbarLabel">Il tuo ordine: accedi per continuare</h5>
+						<h5 class="offcanvas-title" id="offcanvasNavbarLabel">Il tuo ordine: accedi per confermare l'ordine</h5>
 					</c:otherwise>
 				</c:choose>
 				<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -56,13 +56,13 @@
 							</div>
 							<br>
 						</c:forEach>
+						<h3>Totale: ${total}&euro;</h3>
 					</c:when>
 					<c:otherwise>
 						<h6>Il tuo carrello &egrave; vuoto</h6>
 					</c:otherwise>
 				</c:choose>
 				
-				<h3>Totale: ${total}&euro;</h3>
 			</div>
 		</div>
 	</div>
