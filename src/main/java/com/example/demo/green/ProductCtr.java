@@ -22,6 +22,7 @@ public class ProductCtr {
 	@GetMapping()
 	public String getProduct(@RequestParam Integer id, HttpSession session) {
 		session.setAttribute("products", repo.findByCategoryId(id));
+		session.setAttribute("currentCatId", id);
 		return "/green/prodotto";
 	}
 }
