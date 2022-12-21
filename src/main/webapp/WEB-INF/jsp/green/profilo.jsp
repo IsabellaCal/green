@@ -46,8 +46,8 @@
 			<thead>
 				<tr>
 					<th scope="col">Id ordine</th>
+					<!-- <th scope="col">??</th> -->
 					<th scope="col">Totale ordine</th>
-					<th scope="col">Utente</th>
 				</tr>
 			</thead>
 
@@ -56,8 +56,8 @@
 				<c:forEach var="personalOrder" items="${personalOrders}">
 					<tr>
 						<td>${personalOrder.id}</td>
-						<td>
-						</td>
+						<!--  <td>
+						</td>  -->
 						<td>${personalOrder.total}</td>
 					</tr>
 				</c:forEach>
