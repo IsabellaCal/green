@@ -64,7 +64,14 @@
 							<br>
 						</c:forEach>
 						<h3>Totale: ${total}&euro;</h3>
-					<a href="/green/home/order/completeOrder"><button class="btn btn-success">Completa l'ordine</button></a>
+					<c:choose>
+						<c:when test="${empty userId}">	
+						<a href="/green/access"><button class="btn btn-success">Accedi per completare l'ordine</button></a>
+						</c:when>
+						<c:otherwise>	
+						<a href="/green/home/order/completeOrder"><button class="btn btn-success">Completa l'ordine</button></a>
+						</c:otherwise>
+					</c:choose>
 					</c:when>
 					<c:otherwise>
 						<h6>Il tuo carrello &egrave; vuoto</h6>

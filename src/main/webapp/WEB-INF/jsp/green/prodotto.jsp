@@ -65,21 +65,21 @@
 	<br>
 	
 	<!-- Modal: esce solo quando schiaccio il logout nel navbootom -->
-		<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		  <div class="modal-dialog">
-		    <div class="modal-content">
-		      <div class="modal-header">
-		        <h1 class="modal-title fs-5" id="staticBackdropLabel">Logout</h1>
-		        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-		      </div>
-		      <div class="modal-body">Sei sicuro di voler fare il logout?</div>
-		      <div class="modal-footer">
-		        <a href="/green/access/logout" class="bott btn btn-success">Sì</a>
-		        <a href="/green/home" class="bott btn btn-danger">No, torna alla home</a>
-		      </div>
-		    </div>
-		  </div>
-		</div>	
+	<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h1 class="modal-title fs-5" id="staticBackdropLabel">Logout</h1>
+	        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+	      </div>
+	      <div class="modal-body">Sei sicuro di voler fare il logout?</div>
+	      <div class="modal-footer">
+	        <a href="/green/access/logout" class="bott btn btn-success">Sì</a>
+	        <a href="/green/home/product" class="bott btn btn-danger">No</a>
+	      </div>
+	    </div>
+	  </div>
+	</div>	
 
 	<!-- FOOTER -->
 	<%@include file="/green/include/navbottom.html"%>
