@@ -1,7 +1,9 @@
 <div class="d-flex justify-content-around fixed-bottom" style="background-color: #F0F0F0">
+		<!-- MENU -->
 		<div class="p-2">
 			<a class="nav-link active" aria-current="page" href="/green/home">Menu</a>
 		</div>
+		<!-- CATEGORIE -->
 		<div class="p-2 dropup-center dropup">
 			<a class="nav-link dropdown-toggle" href="#" role="button"
 				data-bs-toggle="dropdown" aria-expanded="false">Categorie</a>
@@ -13,33 +15,30 @@
 				<li><a class="dropdown-item" href="/green/home/product?id=5">Bevande</a></li>
 			</ul>
 		</div>
-		<!-- <div class="p-2">
-			<a class="nav-link active" aria-current="page" href="/green/access/logout">Logout</a>
-		</div> -->
+
 		<!-- CERCA 
 		<div class="p-2 dropup-center dropup">
-			<a class="nav-link dropdown-toggle" href="#" role="button"
-				data-bs-toggle="dropdown" aria-expanded="false">Cerca</a>
+			<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Cerca</a>
 			<ul class="dropdown-menu">
-			<form action=""><li>
-		<c:if test="${not empty errorSearchMessage}">
-			<span>${errorSearchMessage}</span>
-		</c:if>
-		<div>
-			<div class="row mb-3">
-				<div class="col-sm-4">
-					<input class="form-control" name="string" placeholder="Cerca">
-				</div>
-				<div class="col-sm-5">
-					<button class="btn btn-success" type="submit">Cerca</button>
-				</div>
-			</div>
-		</div>
-	</form>
-			</li>
+				<form action=""><li>
+					<c:if test="${not empty errorSearchMessage}"><span>${errorSearchMessage}</span></c:if>
+					<div>
+						<div class="row mb-3">
+							<div class="col-sm-4">
+								<input class="form-control" name="string" placeholder="Cerca">
+							</div>
+							<div class="col-sm-5">
+								<button class="btn btn-success" type="submit">Cerca</button>
+							</div>
+						</div>
+					</div>
+				</form>
+				</li>
 			</ul>
 		</div>
 		-->
+		
+		<!-- CANTATTI -->
 		<div class="p-2 dropup-center dropup">
 			<a class="nav-link dropdown-toggle" href="#" role="button"
 				data-bs-toggle="dropdown" aria-expanded="false">Contatti</a>
@@ -50,6 +49,7 @@
 				<li><a class="dropdown-item" href="https://goo.gl/maps/Bud9Vysu2rJkRr4SA">Visualizza su Google Maps</a></li>
 			</ul>
 		</div>
+		<!-- CONDIVIDI -->
 		<div class="p-2 dropup-center dropup">
 			<a class="nav-link dropdown-toggle" href="#" role="button"
 				data-bs-toggle="dropdown" aria-expanded="false">Condividi</a>
@@ -59,16 +59,19 @@
 				<li><a class="dropdown-item" href="#">Email</a></li>
 			</ul>
 		</div>
+		<!-- IL MIO PROFILO: VARIA IN BASE AL FATTO CHE CI SIA STATO IL LOGIN -->
 		<div class="p-2 dropup-center dropup">
-			<a class="nav-link dropdown-toggle" href="#" role="button"
-				data-bs-toggle="dropdown" aria-expanded="false">Il mio profilo</a>
+			<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Il mio profilo</a>
 				<c:choose>
 					<c:when test="${not empty userId}">
 						<ul class="dropdown-menu">
 							<li><a class="dropdown-item" href="/green/home/profile">Storico ordini</a></li>
-							<li><a class="dropdown-item" href="/green/home/profile">Modifica</a></li>
-							<li><a class="dropdown-item" href="/green/home/profile">Logout</a></li>
-						</ul>
+							<li><a class="dropdown-item" href="/green/home/profile#modifica">Modifica</a></li>
+							<li><a class="dropdown-item">
+								<button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">Logout</button>
+								</a>
+							</li>
+						</ul>		
 					</c:when>
 					<c:otherwise>
 						<ul class="dropdown-menu">
@@ -76,6 +79,5 @@
 						</ul>
 					</c:otherwise>
 				</c:choose>
-				
 		</div>
 </div>

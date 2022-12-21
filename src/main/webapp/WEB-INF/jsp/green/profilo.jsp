@@ -64,9 +64,9 @@
 
 			</tbody>
 		</table>
-		
+	</div>
 
-<section>
+	<section id="modifica">
 		<h3>Modifica i tuoi dati</h3>
 		<form action="/green/home/profile/modify" method="POST">
 			<div class="mb-3">
@@ -89,16 +89,16 @@
 				<span id="verde">${message}</span>
 			</c:if>
 		</form>
-		</section>
-	<div class="container-fluid">
-		<h3>Logout</h3>
-		<h4>Sei sicuro di voler fare il logout?</h4>
-		<a href="/green/access/logout" class="btn btn-success">Sì</a> <a
-			href="/green/home" class="btn btn-danger">No, torna al
-			menu</a>
-			<br>
-			<br>
-	</div>
-
+	</section>
+	
+	<!-- 
+	<h3>Logout</h3>
+	<h4>Vuoi fare il logout?</h4>
+	<a href="/green/access/logout" class="btn btn-success">Sì</a> 
+	<a href="/green/home" class="btn btn-danger">No, torna al menu</a>
+	<br>
+	<br> 
+	-->
+	
 </body>
 </html>
