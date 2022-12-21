@@ -30,14 +30,13 @@
 	<!-- NAVBAR -->
 	<%@include file="/green/include/navtop.html"%>
 
-	<!-- Page header -->
+	<!-- PAGE HEADER -->
 	<c:forEach var="category" items="${categories}">
 		<c:if test="${category.id eq currentCatId}">
 			<c:set var="currentCatName" value="${category.name}"/>
 			<c:set var="img" value="${category.imgpath}"/>
 		</c:if>
 	</c:forEach>
-	
 	<div class="container">
 		<img class="header" src="/green/pic/category/${img}" alt = "/green/pic/category/${img}" >
 		<h1 class="centered">${currentCatName}</h1>

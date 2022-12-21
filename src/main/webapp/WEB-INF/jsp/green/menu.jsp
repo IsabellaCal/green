@@ -39,6 +39,10 @@
 			<img class="header" src="/green/pic/category/header.png">
 			<h1 class="centered">Pizza &amp; Pinsa</h1>
 		</div>
+		
+		<!--  TOAST -->
+		<c:if test="${not empty message}">
+		</c:if>
 
 		<!-- CARDS -->
 		<c:forEach var="category" items="${categories}">
