@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -45,25 +45,25 @@
 		<table class="table">
 			<thead>
 				<tr>
-					<th scope="col">Data ordine</th>
-					<th scope="col">N.ordine</th>
-					<th scope="col"></th>
+					<th scope="col">Id ordine</th>
+					<th scope="col">Totale ordine</th>
+					<th scope="col">Utente</th>
 				</tr>
 			</thead>
 
 			<tbody>
-				<tr>
-					<c:forEach var="detail" items="${details}">
-						<tr>
-							<td>${detail.menuId}</td>
-							<td>${detail.quantity}</td>
-							<td><a href="#" type="submit" class="btn btn-danger">Elimina</a></td>
-						</tr>
-					</c:forEach>
-				</tr>
+
+				<c:forEach var="personalOrder" items="${personalOrders}">
+					<tr>
+						<td>${personalOrder.id}</td>
+						<td>
+						</td>
+						<td>${personalOrder.total}</td>
+					</tr>
+				</c:forEach>
+
 			</tbody>
 		</table>
-	</div>
 		
 
 <section>

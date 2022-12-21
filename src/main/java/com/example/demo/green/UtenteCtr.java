@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.demo.green.dao.Utente;
 import com.example.demo.green.repo.CategoryRepo;
+import com.example.demo.green.repo.OrdineRepo;
 import com.example.demo.green.repo.UtenteRepo;
 
 @Controller
@@ -19,10 +20,12 @@ public class UtenteCtr {
 
 	private UtenteRepo repo;
 	private CategoryRepo categoryRepo;
+	private OrdineRepo ordineRepo;
 
-	public UtenteCtr(UtenteRepo repo, CategoryRepo categoryRepo) {
+	public UtenteCtr(UtenteRepo repo, CategoryRepo categoryRepo, OrdineRepo ordineRepo) {
 		this.repo = repo;
 		this.categoryRepo = categoryRepo;
+		this.ordineRepo = ordineRepo;
 	}
 
 	@PostMapping("/login")
@@ -40,6 +43,8 @@ public class UtenteCtr {
 				&& repo.findByUsername(username).iterator().next().getPasskey().equals(password)) {
 			session.setAttribute("userId", repo.findByUsername(username).iterator().next().getId());
 			session.setAttribute("usernameCurrent", repo.findByUsername(username).iterator().next().getUsername());
+			session.setAttribute("personalOrders",
+					ordineRepo.findPersonalOrders((Integer) session.getAttribute("userId")));
 			model.addAttribute("message", "Login avvenuto con successo");
 			return "/green/menu";
 		} else {

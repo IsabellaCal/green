@@ -7,15 +7,20 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Ordine {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ORDINE_ID")
+	@OneToMany
+	@JoinColumn(name = "ORDINE_ID")
 	private Integer id;
 	private double total;
 	private Integer utenteId;
+	
 
 	public Ordine() {
 	}

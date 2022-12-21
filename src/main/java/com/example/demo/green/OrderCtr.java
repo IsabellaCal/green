@@ -112,14 +112,16 @@ public class OrderCtr {
 		Ordine ordine = new Ordine((double) svc.getTotal(details), (Integer) session.getAttribute("userId"));
 		ordine = ordineRepo.save(ordine);
 		for (int i = 0; i < details.size(); i++) {
-			details.get(i).setOrderId(ordine.getId());
+			details.get(i).setOrdine(ordine);
 			detailRepo.save(details.get(i));
 		}
+		session.setAttribute("personalOrders",
+				ordineRepo.findPersonalOrders((Integer) session.getAttribute("userId")));
 		session.removeAttribute("details");
 		session.removeAttribute("numberItems");
 		session.removeAttribute("total");
 		model.addAttribute("message", "Ordine effettuato con successo!");
-		return "/green/prodotto";
+		return "/green/menu";
 	}
 
 	@GetMapping()

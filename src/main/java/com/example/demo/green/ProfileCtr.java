@@ -43,8 +43,7 @@ public class ProfileCtr {
 	}
 
 	@GetMapping
-	public String getProfile(HttpSession session) {
-		session.setAttribute("details", detailRepo.findAll());
+	public String getProfile() {
 		return "/green/profilo";
 	}
 	

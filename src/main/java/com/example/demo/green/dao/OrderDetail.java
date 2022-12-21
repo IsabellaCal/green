@@ -18,7 +18,10 @@ public class OrderDetail {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "DETAIL_ID")
 	private Integer id;
-	private Integer ordineId;
+	
+	@ManyToOne
+	@JoinColumn(name = "ORDINE_ID")
+	private Ordine ordine;
 	
 	@ManyToOne
 	@JoinColumn(name = "MENU_ID")
@@ -41,12 +44,12 @@ public class OrderDetail {
 		this.id = id;
 	}
 
-	public Integer getOrderId() {
-		return ordineId;
+	public Ordine getOrdine() {
+		return ordine;
 	}
 
-	public void setOrderId(Integer orderId) {
-		this.ordineId = orderId;
+	public void setOrdine(Ordine ordine) {
+		this.ordine = ordine;
 	}
 
 	public Product getProduct() {
@@ -67,7 +70,7 @@ public class OrderDetail {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(id, ordineId, product, quantity);
+		return Objects.hash(id, ordine, product, quantity);
 	}
 
 	@Override
@@ -79,15 +82,13 @@ public class OrderDetail {
 		if (getClass() != obj.getClass())
 			return false;
 		OrderDetail other = (OrderDetail) obj;
-		return Objects.equals(id, other.id) && Objects.equals(ordineId, other.ordineId)
+		return Objects.equals(id, other.id) && Objects.equals(ordine, other.ordine)
 				&& Objects.equals(product, other.product) && Objects.equals(quantity, other.quantity);
 	}
 
 	@Override
 	public String toString() {
-		return "OrderDetail [id=" + id + ", ordineId=" + ordineId + ", product=" + product + ", quantity=" + quantity
-				+ "]";
+		return "OrderDetail [id=" + id + ", ordine=" + ordine + ", product=" + product + ", quantity=" + quantity + "]";
 	}
-
 	
 }
