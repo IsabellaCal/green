@@ -22,13 +22,13 @@ import com.example.demo.green.repo.ProductRepo;
 @RequestMapping("/green/home/order")
 public class OrderCtr {
 
-	private ProductRepo repo;
+	private ProductRepo productRepo;
 	private OrderDetailRepo detailRepo;
 	private OrdineRepo ordineRepo;
 	private OrderSvc svc;
 
 	public OrderCtr(ProductRepo repo, OrderDetailRepo detailRepo, OrdineRepo orderRepo, OrderSvc svc) {
-		this.repo = repo;
+		this.productRepo = repo;
 		this.svc = svc;
 		this.detailRepo = detailRepo;
 		this.ordineRepo = orderRepo;
@@ -47,7 +47,7 @@ public class OrderCtr {
 			int quantity = detail.get().getQuantity();
 			detail.get().setQuantity(quantity + 1);
 		} else {
-			details.add(new OrderDetail(repo.findById(id).get(), 1));
+			details.add(new OrderDetail(productRepo.findById(id).get(), 1));
 		}
 		session.setAttribute("total", svc.getTotal(details));
 		session.setAttribute("numberItems", svc.getNumberItems(details));
