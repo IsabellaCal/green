@@ -74,7 +74,7 @@ public class OrderCtr {
 		session.setAttribute("details", details);
 		return "/green/prodotto";
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	@GetMapping("/removeOne")
 	public String removeOne(@RequestParam Integer id, HttpSession session) {
@@ -88,7 +88,7 @@ public class OrderCtr {
 		Optional<OrderDetail> detail = details.stream().filter(d -> d.getProduct().getId() == id).findAny();
 		if (detail.isPresent()) {
 			int quantity = detail.get().getQuantity();
-			if(quantity == 1) {
+			if (quantity == 1) {
 				details.remove(detail.get());
 			} else {
 				detail.get().setQuantity(quantity - 1);
@@ -99,24 +99,26 @@ public class OrderCtr {
 		session.setAttribute("details", details);
 		return "/green/prodotto";
 	}
-	
+
 	@SuppressWarnings("unchecked")
-	@GetMapping("/completeOrder") 
-	public String completeOrder(HttpSession session, Model model, Integer id) {
+	@GetMapping("/completeOrder")
+	public String completeOrder(HttpSession session, Model model) {
 		List<OrderDetail> details;
 		if (session.getAttribute("details") == null) {
 			return "/green/prodotto";
 		} else {
 			details = (List<OrderDetail>) session.getAttribute("details");
 		}
-		Optional<OrderDetail> detail = details.stream().filter(d -> d.getProduct().getId() == id).findAny();
-		if (detail.isPresent()) {
-			Ordine ordine = new Ordine((double) svc.getTotal(details), (Integer) session.getAttribute("userId"));
-			ordine = ordineRepo.save(ordine);
-			detail.get().setOrderId(ordine.getId());
-			detailRepo.save(detail.get());
+		Ordine ordine = new Ordine((double) svc.getTotal(details), (Integer) session.getAttribute("userId"));
+		ordine = ordineRepo.save(ordine);
+		for (int i = 0; i < details.size(); i++) {
+			details.get(i).setOrderId(ordine.getId());
+			detailRepo.save(details.get(i));
 		}
 		session.removeAttribute("details");
+		session.removeAttribute("numberItems");
+		session.removeAttribute("total");
+		model.addAttribute("message", "Ordine effettuato con successo!");
 		return "/green/prodotto";
 	}
 
