@@ -1,5 +1,6 @@
 <nav class="navbar sticky-top bg-light fixed-top">
 	<div class="container-fluid">
+		<!--  TASTO INDIETRO -->
 		<c:choose>
 			<c:when test="${type eq 'menu'}">
 				<a class="navbar-brand" href="/index.html"> <img
@@ -10,15 +11,19 @@
 					src="/green/pic/indietro.png" width="40" height="40"></a>
 			</c:otherwise>
 		</c:choose>
-
-		<a class="navbar-brand" href="#"><img src="/green/pic/logo.png"
-			width="120" height="34"></a>
+		
+		<!-- LOGO -->
+		<a class="navbar-brand" href="#"><img src="/green/pic/logo.png" width="120" height="34"></a>
+		
+		<!-- MENU A TENDINA -->
 		<button class="navbar-toggler" type="button"
 			data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
 			aria-controls="offcanvasNavbar">
-			<span class="badge text-bg-danger">${numberItems}</span> <span
-				class="navbar-toggler-icon"></span>
+			<!-- BADGE -->
+			<span class="badge text-bg-danger">${numberItems}</span> 
+			<span class="navbar-toggler-icon"></span>
 		</button>
+		<!-- ORDINE -->
 		<div class="offcanvas offcanvas-end" tabindex="-1"
 			id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
 			<div class="offcanvas-header">
@@ -28,14 +33,13 @@
 							${usernameCurrent}, ecco il tuo ordine</h5>
 					</c:when>
 					<c:otherwise>
-						<h5 class="offcanvas-title" id="offcanvasNavbarLabel">Il tuo
-							ordine: accedi per confermare l'ordine</h5>
+						<h5 class="offcanvas-title" id="offcanvasNavbarLabel">Il tuo ordine</h5>
 					</c:otherwise>
 				</c:choose>
 				<button type="button" class="btn-close" data-bs-dismiss="offcanvas"
 					aria-label="Close"></button>
 			</div>
-
+			<!-- CARDS -->
 			<div class="offcanvas-body">
 				<c:choose>
 					<c:when test="${not empty details}">
@@ -49,10 +53,10 @@
 
 									<div class="d-grid gap-2 d-md-block">
 										<a href="/green/home/order/removeOne?id=${detail.product.id}"><button
-												class="btn btn-secondary">-</button></a> <a
-											href="/green/home/order/delete?id=${detail.product.id}"><button
-												class="btn btn-danger">Elimina</button></a> <a
-											href="/green/home/order/add?id=${detail.product.id}"><button
+												class="btn btn-secondary">-</button></a> 
+										<a href="/green/home/order/delete?id=${detail.product.id}"><button
+												class="btn btn-danger">Elimina</button></a> 
+										<a href="/green/home/order/add?id=${detail.product.id}"><button
 												class="btn btn-secondary">+</button></a>
 									</div>
 								</div>
@@ -60,8 +64,7 @@
 							<br>
 						</c:forEach>
 						<h3>Totale: ${total}&euro;</h3>
-						<a href="/green/home/order/completeOrder"><h3>Completa
-								ordine</h3></a>
+					<a href="/green/home/order/completeOrder"><button class="btn btn-success">Completa l'ordine</button></a>
 					</c:when>
 					<c:otherwise>
 						<h6>Il tuo carrello &egrave; vuoto</h6>

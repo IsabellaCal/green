@@ -28,10 +28,8 @@
 	<!-- NAVTOP -->
 	<nav class="navbar sticky-top bg-light fixed-top">
 	<div class="container-fluid">
-				<a class="navbar-brand" href="/index.html"> <img
-					src="/green/pic/indietro.png" width="40" height="40"></a>
-				<a class="navbar-brand" href="#"><img src="/green/pic/logo.png"
-			width="120" height="34"></a>
+		<a class="navbar-brand" href="/index.html"><img src="/green/pic/indietro.png" width="40" height="40"></a>
+		<a class="navbar-brand" href="#"><img src="/green/pic/logo.png" width="120" height="34"></a>
 	</div>
 	</nav>
 	

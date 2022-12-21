@@ -33,16 +33,22 @@
 	<%@include file="/green/include/navtop.html"%>
 		
 	<div class="container-fluid">
+		<!--  ALERT -->
+		<c:if test="${not empty message}">
+		<div class="alert alert-success d-flex align-items-center justify-content-between" role="alert">
+		  <div>
+			  <img src="/green/pic/spunta.png" width="20" height="20">
+			  ${message}
+		  </div>
+		  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		</div>
+		</c:if>
         
         <!-- PAGE HEADER -->
 		<div class="container">
 			<img class="header" src="/green/pic/category/header.png">
 			<h1 class="centered">Pizza &amp; Pinsa</h1>
 		</div>
-		
-		<!--  TOAST -->
-		<c:if test="${not empty message}">
-		</c:if>
 
 		<!-- CARDS -->
 		<c:forEach var="category" items="${categories}">
