@@ -100,7 +100,6 @@ public class OrderCtr {
 		return "/green/prodotto";
 	}
 	
-	// PROVA MIA --> NON PUSHARE
 	@SuppressWarnings("unchecked")
 	@GetMapping("/completeOrder") 
 	public String completeOrder(HttpSession session, Model model, Integer id) {
@@ -117,7 +116,7 @@ public class OrderCtr {
 			detail.get().setOrderId(ordine.getId());
 			detailRepo.save(detail.get());
 		}
-		session.setAttribute("details", details);
+		session.removeAttribute("details");
 		return "/green/prodotto";
 	}
 
