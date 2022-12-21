@@ -46,8 +46,8 @@
 			<thead>
 				<tr>
 					<th scope="col">Id ordine</th>
+					<!-- <th scope="col">??</th> -->
 					<th scope="col">Totale ordine</th>
-					<th scope="col">Utente</th>
 				</tr>
 			</thead>
 
