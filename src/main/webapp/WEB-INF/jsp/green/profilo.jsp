@@ -56,8 +56,8 @@
 				<c:forEach var="personalOrder" items="${personalOrders}">
 					<tr>
 						<td>${personalOrder.id}</td>
-						<td>
-						</td>
+						<!--  <td>
+						</td>  -->
 						<td>${personalOrder.total}</td>
 					</tr>
 				</c:forEach>
