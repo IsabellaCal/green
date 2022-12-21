@@ -1,7 +1,5 @@
 package com.example.demo.green;
 
-import java.util.Optional;
-
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
@@ -12,18 +10,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.demo.green.dao.Utente;
-import com.example.demo.green.repo.OrderDetailRepo;
 import com.example.demo.green.repo.UtenteRepo;
 
 @Controller
 @RequestMapping("/green/home/profile")
 public class ProfileCtr {
 	private UtenteRepo repo;
-	private OrderDetailRepo detailRepo;
 
-	public ProfileCtr(UtenteRepo repo, OrderDetailRepo detailRepo) {
+	public ProfileCtr(UtenteRepo repo) {
 		this.repo = repo;
-		this.detailRepo = detailRepo;
 	}
 
 	@PostMapping("/modify")
