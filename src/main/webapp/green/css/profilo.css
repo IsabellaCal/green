@@ -1,1 +1,29 @@
 @charset "ISO-8859-1";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;500&family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;500&family=Righteous&family=Staatliches&display=swap');
+
+body  {
+	font-family: "righteous", sans-serif !important;
+}
+
+h1, h2, h3, h4, h5, h6  {
+	font-family: "staatliches", sans-serif !important;
+}
+
+
+#rosso{
+	color:red !important;
+}
+
+#verde{
+	color:green;
+}
+input {
+	
+}
+section{
+	margin-bottom:40px;
+	margin-top:40px;
+	padding:15px 15px 15px 15px;
+	background-color: #eeeeee;
+}
