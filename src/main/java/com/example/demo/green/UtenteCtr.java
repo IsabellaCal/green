@@ -44,7 +44,7 @@ public class UtenteCtr {
 			return "/green/menu";
 		} else {
 			model.addAttribute("errorLogin",
-					"Username o password errati, se non sei registrato compila il form in basso");
+					"Username o password errati, se non sei registrato compila il form a destra");
 			model.addAttribute("usernameLogin", username);
 			return "/green/registrati";
 		}

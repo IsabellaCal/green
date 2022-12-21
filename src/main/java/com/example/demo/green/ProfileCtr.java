@@ -12,15 +12,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.demo.green.dao.Utente;
+import com.example.demo.green.repo.OrderDetailRepo;
 import com.example.demo.green.repo.UtenteRepo;
 
 @Controller
 @RequestMapping("/green/home/profile")
 public class ProfileCtr {
 	private UtenteRepo repo;
+	private OrderDetailRepo detailRepo;
 
-	public ProfileCtr(UtenteRepo repo) {
+	public ProfileCtr(UtenteRepo repo, OrderDetailRepo detailRepo) {
 		this.repo = repo;
+		this.detailRepo = detailRepo;
 	}
 
 	@PostMapping("/modify")
@@ -41,6 +44,7 @@ public class ProfileCtr {
 
 	@GetMapping
 	public String getProfile(HttpSession session) {
+		session.setAttribute("details", detailRepo.findAll());
 		return "/green/profilo";
 	}
 	

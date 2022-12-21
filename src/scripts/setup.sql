@@ -1,9 +1,10 @@
 drop table if exists order_detail;
 DROP TABLE IF EXISTS MENU cascade;
 drop table if exists category;
-drop table if exists "order" cascade;
+drop table if exists ordine cascade;
 drop table if exists utente cascade;
-
+drop table if exists "user";
+drop table if exists "order";
 
 create table category(
 	category_id serial primary key,
@@ -51,26 +52,18 @@ create table utente(
 
 insert into utente (username, passkey) values ('Giulia@polito', 'password');
 
-
-
-create table "order"(
-	order_id serial primary key,
+create table ordine(
+	ordine_id serial primary key,
 	total decimal(5,2),
 	utente_id integer,
 	foreign key (utente_id) references utente (utente_id)
 );
 
-insert into "order" (total) values (10);
-
 create table order_detail(
 	detail_id serial primary key,
-	order_id integer,
+	ordine_id integer,
 	menu_id integer,
 	quantity integer,
-	foreign key (order_id) references "order" (order_id),
+	foreign key (ordine_id) references ordine (ordine_id),
 	foreign key (menu_id) references menu (menu_id)
 );
-
-insert into order_detail (order_id, menu_id, quantity) values (1, 1, 1);
-
-insert into order_detail (order_id, menu_id, quantity) values (1, 2, 1);

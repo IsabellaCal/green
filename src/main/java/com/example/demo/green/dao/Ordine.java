@@ -9,18 +9,18 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Order {
+public class Ordine {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "ORDER_ID")
+	@Column(name = "ORDINE_ID")
 	private Integer id;
 	private double total;
 	private Integer utenteId;
 
-	public Order() {
+	public Ordine() {
 	}
 
-	public Order(double total, Integer userId) {
+	public Ordine(double total, Integer userId) {
 		this.total = total;
 		this.utenteId = userId;
 	}
@@ -62,7 +62,7 @@ public class Order {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Order other = (Order) obj;
+		Ordine other = (Ordine) obj;
 		return Objects.equals(id, other.id) && Double.doubleToLongBits(total) == Double.doubleToLongBits(other.total)
 				&& Objects.equals(utenteId, other.utenteId);
 	}
