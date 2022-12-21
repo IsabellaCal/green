@@ -10,27 +10,30 @@
 					src="/green/pic/indietro.png" width="40" height="40"></a>
 			</c:otherwise>
 		</c:choose>
-		
+
 		<a class="navbar-brand" href="#"><img src="/green/pic/logo.png"
 			width="120" height="34"></a>
 		<button class="navbar-toggler" type="button"
 			data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
 			aria-controls="offcanvasNavbar">
-			 <span class="badge text-bg-danger">${numberItems}</span>
-			<span class="navbar-toggler-icon"></span>
+			<span class="badge text-bg-danger">${numberItems}</span> <span
+				class="navbar-toggler-icon"></span>
 		</button>
 		<div class="offcanvas offcanvas-end" tabindex="-1"
 			id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
 			<div class="offcanvas-header">
 				<c:choose>
 					<c:when test="${not empty userId}">
-						<h5 class="offcanvas-title" id="offcanvasNavbarLabel">Ciao ${usernameCurrent}, ecco il tuo ordine</h5>
+						<h5 class="offcanvas-title" id="offcanvasNavbarLabel">Ciao
+							${usernameCurrent}, ecco il tuo ordine</h5>
 					</c:when>
 					<c:otherwise>
-						<h5 class="offcanvas-title" id="offcanvasNavbarLabel">Il tuo ordine: accedi per confermare l'ordine</h5>
+						<h5 class="offcanvas-title" id="offcanvasNavbarLabel">Il tuo
+							ordine: accedi per confermare l'ordine</h5>
 					</c:otherwise>
 				</c:choose>
-				<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+				<button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+					aria-label="Close"></button>
 			</div>
 
 			<div class="offcanvas-body">
@@ -43,7 +46,7 @@
 										${detail.product.name}</h5>
 									<p class="card-text">${detail.product.price *
 										detail.quantity}&euro;</p>
-		
+
 									<div class="d-grid gap-2 d-md-block">
 										<a href="/green/home/order/removeOne?id=${detail.product.id}"><button
 												class="btn btn-secondary">-</button></a> <a
@@ -57,12 +60,14 @@
 							<br>
 						</c:forEach>
 						<h3>Totale: ${total}&euro;</h3>
+						<a href="/green/home/order/completeOrder"><h3>Completa
+								ordine</h3></a>
 					</c:when>
 					<c:otherwise>
 						<h6>Il tuo carrello &egrave; vuoto</h6>
 					</c:otherwise>
 				</c:choose>
-				
+
 			</div>
 		</div>
 	</div>
